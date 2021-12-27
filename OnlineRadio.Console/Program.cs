@@ -1,18 +1,12 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
-using Humanizer;
-using Flurl.Http;
-using PlaylistsNET.Content;
-using PlaylistsNET.Models;
 using Spectre.Console.Cli;
 using System.Text.Json.Serialization;
 using System.Collections.Generic;
 using System.Text.Json;
 
-namespace OnlineRadio.CommandLine
+namespace OnlineRadio.Console
 {
     static class Program
     {

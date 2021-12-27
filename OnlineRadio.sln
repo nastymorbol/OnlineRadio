@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineRadio.Core", "OnlineR
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineRadio.Plugins.Audio", "OnlineRadio.Plugins.Audio\OnlineRadio.Plugins.Audio.csproj", "{C468872F-1B04-47BE-87AD-BCE3C25789ED}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineRadio.CommandLine", "OnlineRadio.CommandLine\OnlineRadio.CommandLine.csproj", "{E1870C19-FD2E-4887-9F1B-F5298DB4EF27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineRadio.Console", "OnlineRadio.Console\OnlineRadio.Console.csproj", "{E1870C19-FD2E-4887-9F1B-F5298DB4EF27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

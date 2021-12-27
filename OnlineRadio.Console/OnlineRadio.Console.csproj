@@ -2,10 +2,7 @@
 	<PropertyGroup>
 		<Version>9.0.3</Version>
 		<OutputType>Exe</OutputType>
-		<RootNamespace>OnlineRadio.Console</RootNamespace>
-		<AssemblyName>OnlineRadio.Console</AssemblyName>
 		<TargetFramework>net6.0</TargetFramework>
-		<AssemblyTitle>OnlineRadio.Console</AssemblyTitle>
 		<Product>OnlineRadio.Console</Product>
 		<Copyright>Copyright ©  2021</Copyright>
 		<PackageId>NMB.$(AssemblyName)</PackageId>
@@ -17,6 +14,8 @@
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/nastymorbol/OnlineRadio</RepositoryUrl>
 		<PackageTags>streaming;radio;mp3</PackageTags>
+		<PackAsTool>true</PackAsTool>
+		<ToolCommandName>nmbradio</ToolCommandName>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Flurl.Http" Version="3.2.0" />
@@ -27,6 +26,9 @@
 		<PackageReference Include="NMB.OnlineRadio.Core" Version="9.0.14" />
 	</ItemGroup>
 	<ItemGroup>
+		<None Update="playlist.m3u8">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
 		<None Update="README.md">
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
