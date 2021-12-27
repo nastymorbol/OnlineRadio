@@ -6,6 +6,12 @@
     <Product>OnlineRadio.Plugins.Audio</Product>
     <Copyright>Copyright ©  2012</Copyright>
     <IsPackable>true</IsPackable>
+	<PackageId>NMB.$(AssemblyName)</PackageId>
+	<Authors>nastymorbol;giacomopoz</Authors>
+	<Description>C# audio plugins for online radio streams</Description>
+	<PackageProjectUrl>https://github.com/nastymorbol/OnlineRadio</PackageProjectUrl>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="NAudio.Wasapi" Version="2.0.0" />

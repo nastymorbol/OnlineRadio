@@ -3,7 +3,13 @@
     <Version>9.0.3</Version>
     <TargetFramework>net6.0</TargetFramework>
     <AssemblyTitle>OnlineRadio.Core</AssemblyTitle>
-    <Product>OnlineRadio.Core</Product>
+    <Product>NMB.OnlineRadio.Core</Product>
     <Copyright>Copyright ©  2021</Copyright>
+    <PackageId>NMB.$(AssemblyName)</PackageId>
+    <Authors>nastymorbol;giacomopoz</Authors>
+    <Description>C# client for online radio streams</Description>
+    <PackageProjectUrl>https://github.com/nastymorbol/OnlineRadio</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 </Project>
