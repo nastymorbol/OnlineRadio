@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
+    <Version>9.0.3</Version>
     <OutputType>Exe</OutputType>
     <RootNamespace>OnlineRadio.Console</RootNamespace>
     <AssemblyName>OnlineRadio.Console</AssemblyName>
@@ -11,12 +10,6 @@
     <Copyright>Copyright ©  2012</Copyright>
     <OutputPath>bin\$(Configuration)\</OutputPath>
 	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <DebugType>full</DebugType>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <DebugType>pdbonly</DebugType>
   </PropertyGroup>
   <PropertyGroup>
     <PostBuildEvent />

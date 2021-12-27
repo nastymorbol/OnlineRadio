@@ -162,6 +162,9 @@ namespace OnlineRadio.Plugins.Audio
             } while (IsPlaying);
 
             CleanUpAudio();
+
+            // Ignore async warnings
+            await Task.FromException(new NotImplementedException());
         }
 
         private void CleanUpAudio()

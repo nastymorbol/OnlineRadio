@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ProductVersion>8.0.30703</ProductVersion>
+    <Version>9.0.3</Version>
     <TargetFramework>net6.0</TargetFramework>
     <AssemblyTitle>OnlineRadio.Core</AssemblyTitle>
     <Product>OnlineRadio.Core</Product>
