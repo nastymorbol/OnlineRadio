@@ -8,10 +8,12 @@
     <AssemblyTitle>OnlineRadio.Console</AssemblyTitle>
     <Product>OnlineRadio.Console</Product>
     <Copyright>Copyright ©  2021</Copyright>
-	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PostBuildEvent />
+    <PackageId>NMB.$(AssemblyName)</PackageId>
+    <Authors>nastymorbol;giacomopoz</Authors>
+    <Description>C# client demo for online radio streams</Description>
+    <PackageProjectUrl>https://github.com/nastymorbol/OnlineRadio</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Flurl.Http" Version="3.2.0" />
