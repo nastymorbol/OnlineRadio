@@ -1,6 +1,7 @@
 # OnlineRadio
 C# client for online radio streams (IceCast)
 
-[![Build status](https://ci.appveyor.com/api/projects/status/9xma0y91eq6opykd/branch/master?svg=true)](https://ci.appveyor.com/project/jackpoz/onlineradio/branch/master)
+This is a fork from the original Project OnlineRadio from https://github.com/jackpoz/OnlineRadio
 
-[![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=OnlineRadio&metric=alert_status)](https://sonarcloud.io/dashboard?id=OnlineRadio)
+
+[![Build status](https://ci.appveyor.com/api/projects/status/github/nastymorbol/OnlineRadio?svg=true)](https://ci.appveyor.com/project/nastymorbol/onlineradio/branch/master)
