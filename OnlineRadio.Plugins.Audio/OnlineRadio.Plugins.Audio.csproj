@@ -17,12 +17,6 @@
 	<PackageTags>streaming;radio;mp3</PackageTags>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="..\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="NAudio.Wasapi" Version="2.0.0" />
     <PackageReference Include="NAudio.WinMM" Version="2.0.1" />
   </ItemGroup>
