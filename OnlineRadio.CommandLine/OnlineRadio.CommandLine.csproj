@@ -14,7 +14,16 @@
     <PackageProjectUrl>https://github.com/nastymorbol/OnlineRadio</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<RepositoryUrl>https://github.com/nastymorbol/OnlineRadio</RepositoryUrl>
+	<PackageTags>streaming;radio;mp3</PackageTags>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Flurl.Http" Version="3.2.0" />
     <PackageReference Include="Humanizer.Core.de" Version="2.11.10" />
