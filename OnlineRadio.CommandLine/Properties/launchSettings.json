@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "OnlineRadio.CommandLine": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\Users\\benuzer 1\\OneDrive\\Programing\\source\\WebRadio\\OnlineRadio-master\\OnlineRadio.CommandLine\\publish",
+      "ycommandLineArgs": "play --url https://wdr-wdr4-live.icecastssl.wdr.de/wdr/wdr4/live/mp3/128/stream.mp3",
+      "zcommandLineArgs": "download",
+      "commandLineArgs": "download mylist.m3u",
+      "bcommandLineArgs": "play mylist.m3u"
+    }
+  }
+}

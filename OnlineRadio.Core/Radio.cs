@@ -98,7 +98,7 @@ namespace OnlineRadio.Core
             pluginManager = new PluginManager();
             this.httpClient = new HttpClient
             {
-                Timeout = new TimeSpan(0, 0, 10)
+                Timeout = TimeSpan.FromSeconds(10)
             };
         }
 
