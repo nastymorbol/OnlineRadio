@@ -14,8 +14,9 @@ namespace OnlineRadio
 
         private Radio _radio;
 
-        public string SongTitle => _radio?.CurrentSong?.Title ?? string.Empty;
-        public string SongArtist => _radio?.CurrentSong?.Artist ?? string.Empty;
+        public bool Running => _radio?.Running ?? false;
+        public string SongTitle => Running ? _radio?.CurrentSong?.Title ?? string.Empty : "Pause ...";
+        public string SongArtist => Running ? _radio?.CurrentSong?.Artist ?? string.Empty : "Pause ...";
         public TimeSpan Elapsed => _stopWatch?.Elapsed ?? TimeSpan.Zero;
 
         public RadioPlayer()
@@ -34,8 +35,7 @@ namespace OnlineRadio
             _radio.OnCurrentSongChanged += _radio_OnCurrentSongChanged;
 
             _radio.Start();
-            _stopWatch.Restart();
-
+            _stopWatch.Restart();            
         }
 
         public void Stop()
@@ -45,6 +45,18 @@ namespace OnlineRadio
                 _radio.OnCurrentSongChanged -= _radio_OnCurrentSongChanged;
             _radio?.Dispose();
             _radio = null;
+        }
+
+        public void Pause()
+        {
+            _radio?.Stop();
+            _stopWatch.Stop();            
+        }
+
+        public void Resume()
+        {
+            _radio?.Start();
+            _stopWatch.Start();
         }
 
         private void _radio_OnCurrentSongChanged(object sender, CurrentSongEventArgs eventArgs)

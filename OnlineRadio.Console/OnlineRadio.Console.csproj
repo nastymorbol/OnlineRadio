@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<Version>9.0.17</Version>
+		<Version>9.0.18</Version>
 		<OutputType>Exe</OutputType>
 		<TargetFramework>net6.0</TargetFramework>
 		<Product>OnlineRadio.Console</Product>
@@ -23,8 +23,14 @@
 		<PackageReference Include="Humanizer.Core.de" Version="2.11.10" />
 		<PackageReference Include="PlaylistsNET" Version="1.1.3" />
 		<PackageReference Include="Spectre.Console" Version="0.43.0" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(Configuration)' == 'Release'">
 		<PackageReference Include="NMB.OnlineRadio.Core" Version="9.*" />
 		<PackageReference Include="NMB.OnlineRadio.Plugins.Audio" Version="9.*" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(Configuration)' == 'Debug'">
+	  <ProjectReference Include="..\OnlineRadio.Core\OnlineRadio.Core.csproj" />
+	  <ProjectReference Include="..\OnlineRadio.Plugins.Audio\OnlineRadio.Plugins.Audio.csproj" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Update="playlist.m3u8">

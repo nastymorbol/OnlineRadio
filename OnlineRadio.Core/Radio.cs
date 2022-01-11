@@ -112,14 +112,34 @@ namespace OnlineRadio.Core
 
             if (pluginsPath == null)
                 pluginsPath = Directory.GetCurrentDirectory() + "\\plugins";
-            var plugins = pluginManager.LoadPlugins(pluginsPath);
-            OnPluginsLoaded?.Invoke(this, new PluginEventArgs(plugins));
+            if (_plugins == default)
+            {
+                _plugins = pluginManager.LoadPlugins(pluginsPath);
+                OnPluginsLoaded?.Invoke(this, new PluginEventArgs(_plugins));
+            }
             OnCurrentSongChanged += pluginManager.OnCurrentSongChanged;
             OnStreamStart += pluginManager.OnStreamStart;
             OnStreamUpdate += pluginManager.OnStreamUpdate;
             OnStreamOver += pluginManager.OnStreamOver;
             Running = true;
             runningTask = Task.Run(GetHttpStreamAsync);
+        }
+
+        public void Stop()
+        {
+            Running = false;
+            OnCurrentSongChanged -= pluginManager.OnCurrentSongChanged;
+            OnStreamStart -= pluginManager.OnStreamStart;
+            OnStreamUpdate -= pluginManager.OnStreamUpdate;
+            OnStreamOver -= pluginManager.OnStreamOver;
+            while (!runningTask.IsCompleted)
+                Thread.Sleep(100);
+
+            if (_plugins != default)
+                foreach (var plugin in _plugins)
+                {
+                    plugin.OnStreamOver(this, new StreamOverEventArgs());
+                }
         }
 
         async Task GetHttpStreamAsync()
@@ -177,7 +197,7 @@ namespace OnlineRadio.Core
                             }
 
                             //get the metadata and reset the position
-                            while (bufferPosition < readBytes)
+                            while (bufferPosition < readBytes && Running)
                             {
                                 metadataData.WriteByte(buffer[bufferPosition++]);
                                 metadataLength--;
@@ -254,6 +274,8 @@ namespace OnlineRadio.Core
         }
 
         IntPtr _disposed = IntPtr.Zero;
+        private List<IPlugin> _plugins;
+
         public void Dispose()
         {
             // Thread-safe single disposal
@@ -272,10 +294,7 @@ namespace OnlineRadio.Core
             httpClient = null;
         }
 
-        public void Stop()
-        {
-            Dispose();
-        }
+
     }
 
     public class SongInfo

@@ -14,4 +14,8 @@ This is a demo for simple usage of the Library
 > nmbradio
 ```
 
+## Changelog
+
+9.0.18 Pause key (P)
+
 [![Build status](https://ci.appveyor.com/api/projects/status/k468h5mmtrjhl2fk?svg=true)](https://ci.appveyor.com/project/nastymorbol/onlineradio)

@@ -115,15 +115,23 @@ namespace OnlineRadio.Commands
                             {
                                 currenPlaylistIndex = int.Parse($"{key.KeyChar}");
                             }
-                            else if (key.Key == ConsoleKey.N || key.Key == ConsoleKey.RightArrow)
+                            else if (key.Key == ConsoleKey.RightArrow)
                                 currenPlaylistIndex++;
-                            else if (key.Key == ConsoleKey.P || key.Key == ConsoleKey.LeftArrow)
+                            else if (key.Key == ConsoleKey.LeftArrow)
                                 currenPlaylistIndex--;
+                            else if(key.Key == ConsoleKey.P)
+                            {
+                                if (_radioPlayer.Running)
+                                    _radioPlayer.Pause();
+                                else
+                                    _radioPlayer.Resume();
+                            }
                             else if (key.Key == ConsoleKey.X || key.Key == ConsoleKey.Q)
                             {
                                 _tokenSource.Cancel();
                                 return;
                             }
+
                             if (currenPlaylistIndex < 0)
                                 currenPlaylistIndex = length - 1;
                             if (currenPlaylistIndex >= length)
@@ -150,17 +158,17 @@ namespace OnlineRadio.Commands
             var lastConsoleWindowSize = new System.Drawing.Size(System.Console.WindowWidth, System.Console.WindowHeight);
             var table = new Table().LeftAligned().RoundedBorder().Width(200);
             table.HideHeaders();
-            table.AddColumn("-DESCRP-", c => { c.Width(8).NoWrap(); });
-            table.AddColumn("-VALUES-", c => { c.NoWrap(); });
-            table.AddRow   ("Artist",   "-");
-            table.AddRow   ("Song",     "-");
-            table.AddRow   ("Duration", "-");
-            table.AddRow   ("Playlist", "-");
+            table.AddColumn("DESCRP", c => { c.Width(8).LeftAligned(); })
+                .AddColumn("-VALUES-", c => { c.Width(2000); })
+                .AddRow   ("Artist",   "-")
+                .AddRow   ("Song",     "-")
+                .AddRow   ("Duration", "-")
+                .AddRow   ("Playlist", "-");
 
             AnsiConsole.Clear();
 
             AnsiConsole.Live(table)
-                .Overflow(VerticalOverflow.Ellipsis)
+                .Overflow(VerticalOverflow.Crop)
                 .AutoClear(true)
                 .Start(ctx =>
                 {
