@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<Version>9.0.4</Version>
-		<TargetFramework>net6.0</TargetFramework>
+		<Version>9.0.6</Version>
+		<TargetFramework>net7.0</TargetFramework>
 		<AssemblyTitle>OnlineRadio.Plugins.Audio</AssemblyTitle>
 		<Product>OnlineRadio.Plugins.Audio</Product>
 		<Copyright>Copyright ©  2012</Copyright>

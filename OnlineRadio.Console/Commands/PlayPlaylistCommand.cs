@@ -71,7 +71,7 @@ namespace OnlineRadio.Commands
             var content = File.ReadAllText(settings.FileName);
             try
             {
-                var appSetting = Console.AppSettings.Load();
+                var appSetting = AppSettings.Load();
                 var parser = PlaylistParserFactory.GetPlaylistParser(PlaylistType.M3U8);
                 var pl = parser.GetFromString(content) as M3uPlaylist;
 

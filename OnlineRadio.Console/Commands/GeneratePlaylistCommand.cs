@@ -19,7 +19,7 @@ namespace OnlineRadio.Commands
     {
         public sealed class Settings : CommandSettings
         {
-            [Description("File name for new playlist.")]
+            [Description("File name for new play list.")]
             [DefaultValue("playlist.m3u8")]
             [CommandArgument(0, "[FILENAME]")]
             public string FileName { get; init; }
